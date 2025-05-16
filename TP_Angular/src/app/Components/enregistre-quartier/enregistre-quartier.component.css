@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f5ff; /* Lavande très clair */
+  color: #4b4453;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.5rem;
+  background: linear-gradient(135deg, #e9d5ff, #c4b5fd); /* Lilac dégradé */
+  color: white;
+  box-shadow: 0 4px 12px rgba(180, 140, 255, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* === TITRE PRINCIPAL === */
+h1 {
+  text-align: center;
+  color: #8b5cf6;
+  font-size: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* === FORMULAIRE === */
+form#quartierForm {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+form label {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form select {
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #e9d5ff;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: #c084fc;
+  box-shadow: 0 0 0 4px rgba(192, 132, 252, 0.2);
+}
+
+/* === BOUTON SOUMETTRE === */
+form input[type="submit"],
+form input[type="text"][value="Soumettre"] {
+  background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+  color: white;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+form input[type="text"][value="Soumettre"]:hover {
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+/* === BOUTONS EN BAS === */
+.button-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button-container button {
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Style des boutons secondaires */
+.button-container button:nth-child(1) {
+  background-color: #e9d5ff;
+  color: #5b21b6;
+}
+
+.button-container button:nth-child(2) {
+  background-color: #ddd6fe;
+  color: #4c1d95;
+}
+
+.button-container button:nth-child(3) {
+  background-color: white;
+  color: #8b5cf6;
+  border: 2px solid #e9d5ff;
+}
+
+.button-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  form#quartierForm,
+  .button-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .button-container button {
+    width: 100%;
+  }
+}

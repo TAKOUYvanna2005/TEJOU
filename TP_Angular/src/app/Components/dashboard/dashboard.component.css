@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf9ff;
+  min-height: 100vh;
+  color: #4a4458;
+}
+
+/* Navbar élégante */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #8a63d2 0%, #6a4cb3 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgba(138, 99, 210, 0.3);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Contenu principal */
+.dashboard-container {
+  padding: 2.5rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-container h1 {
+  font-size: 2.3rem;
+  margin-bottom: 2.5rem;
+  color: #6a4cb3;
+  position: relative;
+  display: inline-block;
+}
+
+.dashboard-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #d8b4fe, #a78bfa);
+  border-radius: 2px;
+}
+
+/* Cartes de statistiques */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 8px 24px rgba(138, 99, 210, 0.08);
+  transition: all 0.4s ease;
+  border-top: 4px solid #d8b4fe;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(138, 99, 210, 0.15);
+}
+
+.stat-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+/* Couleurs personnalisées pour chaque carte */
+.stat-card:nth-child(1) .stat-icon {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+}
+.stat-card:nth-child(2) .stat-icon {
+  background: linear-gradient(135deg, #f9a8d4 0%, #f472b6 100%);
+}
+.stat-card:nth-child(3) .stat-icon {
+  background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%);
+}
+
+.stat-info h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: #4c1d95;
+}
+
+/* Boutons d'action */
+.actions-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.1rem 2.2rem;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Couleurs différentes pour chaque bouton */
+.action-button:nth-child(1) {
+  background: linear-gradient(135deg, #a78bfa 0%, #7e57c2 100%);
+}
+.action-button:nth-child(2) {
+  background: linear-gradient(135deg, #f9a8d4 0%, #ec4899 100%);
+}
+.action-button:nth-child(3) {
+  background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%);
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+}
+
+/* Icônes */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .dashboard-container {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem;
+  }
+  .navbar ul {
+    width: 100%;
+    justify-content: space-around;
+    gap: 0.5rem;
+  }
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .actions-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container h1 {
+    font-size: 2rem;
+  }
+  .stat-card {
+    min-width: 100%;
+  }
+  .action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

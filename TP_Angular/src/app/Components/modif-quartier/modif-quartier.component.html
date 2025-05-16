@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Modifier un Quartier</title>
+  <link rel="stylesheet" href="modif-quartier.component.css">
+</head>
+<body>
+
+  <h1>Modifier un Quartier</h1>
+  <form id="quartierForm">
+    <label for="nom">Nom du Quartier:</label>
+    <input type="text" id="nom" value="Quartier Saint-Michel" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" rows="4" required>Quartier résidentiel calme avec espaces verts.</textarea>
+
+    <label for="population">Population:</label>
+    <input type="number" id="population" value="1200" required>
+
+    <label for="type">Type de Quartier:</label>
+    <select id="type" required>
+      <option value="">Sélectionner</option>
+      <option value="résidentiel" selected>Résidentiel</option>
+      <option value="commercial">Commercial</option>
+      <option value="industriel">Industriel</option>
+    </select>
+
+    <button type="submit" onclick="location.href='save'">Mettre à jour</button>
+  </form>
+
+  <div class="button-container">
+    <button type="button" onclick="location.href='listeQuartier'">Voir la Liste des Quartiers</button>
+    <button type="button" onclick="location.href='Dashboard'">Retour au Dashboard</button>
+  </div>
+
+  <script>
+    document.getElementById('quartierForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nom = document.getElementById('nom').value;
+      const description = document.getElementById('description').value;
+      const population = document.getElementById('population').value;
+      const type = document.getElementById('type').value;
+
+      const updatedQuartier = {
+        nom,
+        description,
+        population,
+        type
+      };
+
+      console.log("Quartier modifié:", updatedQuartier);
+      alert('Quartier mis à jour avec succès !');
+    });
+  </script>
+
+</body>
+</html>

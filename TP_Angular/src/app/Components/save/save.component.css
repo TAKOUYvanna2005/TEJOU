@@ -1,0 +1,8 @@
+input[type="text"] {
+    background-color: #6f42c1; /* Couleur de fond violet */
+    color: white; /* Couleur du texte en blanc */
+    border: none; /* Supprime la bordure */
+    padding: 10px; /* Ajoute du padding */
+    border-radius: 5px; /* Arrondit les coins */
+    cursor: pointer; /* Change le curseur au survol */
+}

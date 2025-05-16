@@ -1,0 +1,104 @@
+<nav class="navbar">
+   
+    <ul>
+      <li><a href="Dashboard">Accueil</a></li>
+      <li><a href="quartier">Quartiers</a></li>
+      <li><a href="Maison">Maisons</a></li>
+      <li><a href="categories">Catégories</a></li>
+      <li><a href="login">Déconnexion</a></li>
+    </ul>
+  </nav>
+<div class="form-container">
+    <h1 class="form-title">Enregistrement d'une nouvelle maison</h1>
+    
+    <form [formGroup]="maisonForm" (ngSubmit)="onSubmit()" class="house-form">
+      <div class="form-group">
+        <label for="adresse">Adresse *</label>
+        <input type="text" id="adresse" formControlName="adresse" 
+               placeholder="Ex: 123 Rue des Exemples">
+        <div *ngIf="maisonForm.get('adresse')?.invalid && maisonForm.get('adresse')?.touched" 
+             class="error-message">
+          L'adresse est requise (max 200 caractères)
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description *</label>
+        <textarea id="description" formControlName="description" rows="4"
+                  placeholder="Décrivez la maison en détail"></textarea>
+        <div *ngIf="maisonForm.get('description')?.invalid && maisonForm.get('description')?.touched" 
+             class="error-message">
+          La description est requise (max 500 caractères)
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label for="superficie">Superficie (m²) *</label>
+          <input type="number" id="superficie" formControlName="superficie" 
+                 placeholder="Ex: 120">
+          <div *ngIf="maisonForm.get('superficie')?.invalid && maisonForm.get('superficie')?.touched" 
+               class="error-message">
+            La superficie doit être entre 1 et 10,000 m²
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="prix">Prix (€)</label>
+          <input type="number" id="prix" formControlName="prix" 
+                 placeholder="Ex: 250000">
+          <div *ngIf="maisonForm.get('prix')?.invalid && maisonForm.get('prix')?.touched" 
+               class="error-message">
+            Le prix ne peut pas être négatif
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label for="quartier">Quartier *</label>
+          <select id="quartier" formControlName="quartier">
+            <option value="" disabled selected>Choisir un quartier</option>
+            <option *ngFor="let quartier of quartiers" [value]="quartier.id">
+              {{ quartier.nom }}
+            </option>
+          </select>
+          <div *ngIf="maisonForm.get('quartier')?.invalid && maisonForm.get('quartier')?.touched" 
+               class="error-message">
+            Veuillez sélectionner un quartier
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="typeMaison">Type de maison *</label>
+          <select id="typeMaison" formControlName="typeMaison">
+            <option value="" disabled selected>Choisir un type</option>
+            <option *ngFor="let type of typesMaison" [value]="type.id">
+              {{ type.nom }}
+            </option>
+          </select>
+          <div *ngIf="maisonForm.get('typeMaison')?.invalid && maisonForm.get('typeMaison')?.touched" 
+               class="error-message">
+            Veuillez sélectionner un type de maison
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="photo">Photo</label>
+        <input type="file" id="photo" (change)="onFileChange($event)" accept="image/*">
+        <small class="file-hint">Formats acceptés: JPG, PNG (max 2MB)</small>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="submit-btn" [disabled]="maisonForm.invalid">
+          Enregistrer
+        </button>
+         <button onclick="location.href='listeMaison'">Voir la Liste des Maisons</button>
+         <button onclick="location.href='modifMaison'">Modifier</button>
+          <button onclick="location.href='Dashboard'">Retour au Dashboard</button>
+        
+      </div>
+       
+    </form>
+  </div>

@@ -1,0 +1,83 @@
+<nav class="navbar">
+    <div class="logo">Mon Dashboard</div>
+    <ul>
+      <li><a href="Dashboard">Accueil</a></li>
+      <li><a href="quartier">Quartiers</a></li>
+      <li><a href="Maison">Maisons</a></li>
+      <li><a href="categories">Catégories</a></li>
+      <li><a href="login">Déconnexion</a></li>
+    </ul>
+  </nav>
+<head>
+  
+    <title>Liste des Maisons</title>
+
+</head>
+<body>
+
+    <h1>Liste des Maisons</h1>
+    <div class="button-container">
+        <button onclick="location.href='Maison'">Ajouter une Maison</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Adresse</th>
+                <th>Description</th>
+                <th>Superficie (m²)</th>
+                <th>Quartier</th>
+                <th>Type de Maison</th>
+            </tr>
+        </thead>
+        <tbody id="maisonList">
+            <!-- Les maisons seront ajoutées ici dynamiquement -->
+        </tbody>
+    </table>
+
+    <script>
+        // Exemple de données de maisons
+        const maisons = [
+            {
+                adresse: "123 Rue des Fleurs",
+                description: "Maison spacieuse avec jardin.",
+                superficie: 120,
+                quartier: "Quartier 1",
+                typeMaison: "Villa"
+            },
+            {
+                adresse: "456 Avenue des Champs",
+                description: "Duplex moderne avec terrasse.",
+                superficie: 150,
+                quartier: "Quartier 2",
+                typeMaison: "Duplex"
+            },
+            {
+                adresse: "789 Boulevard de la Mer",
+                description: "Manoir historique avec vue sur mer.",
+                superficie: 300,
+                quartier: "Quartier 3",
+                typeMaison: "Manoir"
+            }
+        ];
+
+        // Fonction pour afficher les maisons dans le tableau
+        function afficherMaisons() {
+            const maisonList = document.getElementById('maisonList');
+            maisons.forEach(maison => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${maison.adresse}</td>
+                    <td>${maison.description}</td>
+                    <td>${maison.superficie}</td>
+                    <td>${maison.quartier}</td>
+                    <td>${maison.typeMaison}</td>
+                `;
+                maisonList.appendChild(row);
+            });
+        }
+
+        // Appeler la fonction pour afficher les maisons
+        afficherMaisons();
+    </script>
+</body>

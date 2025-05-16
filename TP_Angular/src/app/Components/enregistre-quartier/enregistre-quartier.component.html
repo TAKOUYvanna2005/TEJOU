@@ -1,0 +1,71 @@
+<nav class="navbar">
+    <div class="logo">Mon Dashboard</div>
+    <ul>
+      <li><a href="Dashboard">Accueil</a></li>
+      <li><a href="quartier">Quartiers</a></li>
+      <li><a href="Maison">Maisons</a></li>
+      <li><a href="categories">Catégories</a></li>
+      <li><a href="login">Déconnexion</a></li>
+    </ul>
+  </nav>
+<head>
+    
+    <title>Formulaire de Quartier</title>
+    <link rel="stylesheet" href="enregistre-quartier.component.css">
+   
+</head>
+<body>
+
+    <h1>Formulaire de Création de Quartier</h1>
+    <form id="quartierForm">
+        <label for="nom">Nom du Quartier:</label>
+        <input type="text" id="nom" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" rows="4" required></textarea>
+
+        <label for="population">Population:</label>
+        <input type="number" id="population" required>
+
+        <label for="type">Type de Quartier:</label>
+        <select id="type" required>
+            <option value="">Sélectionner</option>
+            <option value="résidentiel">Résidentiel</option>
+            <option value="commercial">Commercial</option>
+            <option value="industriel">Industriel</option>
+        </select>
+        <a href="save">
+           <input type="submit" value="Soumettre">
+          </a>
+    </form>
+    <div class="button-container">
+        <button onclick="location.href='modifQuartier'">Modifier</button>
+        <button onclick="location.href='listeQuartier'">Voir la Liste des Quartiers</button>
+        <button onclick="location.href='Dashboard'">Retour au Dashboard</button>
+      
+    </div>
+        
+
+    <script>
+        document.getElementById('quartierForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nom = document.getElementById('nom').value;
+            const description = document.getElementById('description').value;
+            const population = document.getElementById('population').value;
+            const type = document.getElementById('type').value;
+
+            const quartierData = {
+                nom,
+                description,
+                population,
+                type
+            };
+
+            console.log("Données du quartier:", quartierData);
+            alert('Formulaire soumis avec succès !');
+            this.reset(); // Réinitialiser le formulaire
+        });
+    </script>
+</body>
+

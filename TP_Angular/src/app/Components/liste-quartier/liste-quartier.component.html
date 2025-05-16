@@ -1,0 +1,70 @@
+ <nav class="navbar">
+    <div class="logo">Mon Dashboard</div>
+    <ul>
+      <li><a href="Dashboard">Accueil</a></li>
+      <li><a href="quartier">Quartiers</a></li>
+      <li><a href="Maison">Maisons</a></li>
+      <li><a href="categories">Catégories</a></li>
+      <li><a href="login">Déconnexion</a></li>
+    </ul>
+  </nav>
+ <head>
+    <link rel="stylesheet" href="liste-quartier.component.css">
+</head>
+<body>
+
+    <h1>Liste des Quartiers</h1>
+    <div class="button-container">
+        <button onclick="location.href='quartier'">Ajouter un Quartier</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom du Quartier</th>
+                <th>Superficie (ha)</th>
+                <th>Nombre de Maisons</th>
+            </tr>
+        </thead>
+        <tbody id="quartierList">
+            <!-- Les quartiers seront ajoutés ici dynamiquement -->
+        </tbody>
+    </table>
+    <script>
+        // Exemple de données de quartiers
+        const quartiers = [
+            {
+                nom: "Quartier 1",
+                superficie: 50,
+                nbMaisons: 120
+            },
+            {
+                nom: "Quartier 2",
+                superficie: 75,
+                nbMaisons: 200
+            },
+            {
+                nom: "Quartier 3",
+                superficie: 30,
+                nbMaisons: 80
+            }
+        ];
+
+        // Fonction pour afficher les quartiers dans le tableau
+        function afficherQuartiers() {
+            const quartierList = document.getElementById('quartierList');
+            quartiers.forEach(quartier => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${quartier.nom}</td>
+                    <td>${quartier.superficie}</td>
+                    <td>${quartier.nbMaisons}</td>
+                `;
+                quartierList.appendChild(row);
+            });
+        }
+
+        // Appeler la fonction pour afficher les quartiers
+        afficherQuartiers();
+    </script>
+</body>

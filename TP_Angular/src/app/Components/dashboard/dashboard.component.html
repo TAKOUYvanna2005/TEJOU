@@ -1,0 +1,70 @@
+ <link rel="stylesheet" href="dashboard.component.css">
+ <nav class="navbar">
+    <div class="logo">Mon Dashboard</div>
+    <ul>
+      <li><a href="Dashboard">Accueil</a></li>
+      <li><a href="quartier">Quartiers</a></li>
+      <li><a href="Maison">Maisons</a></li>
+      <li><a href="categories">Catégories</a></li>
+     
+      <li><a href="login">Déconnexion</a></li>
+    </ul>
+  </nav>
+<div class="dashboard-container">
+    <h1>Tableau de Bord</h1>
+  
+    <div class="stats-container">
+      <!-- Quartiers -->
+      <div class="stat-card">
+        <div class="stat-icon" style="background-color: #4CAF50;">
+          <span class="material-symbols-outlined">apartment</span>
+        </div>
+        <div class="stat-info">
+          <h3>Quartiers</h3>
+          <p class="stat-value">{{ quartiersCount || 0 }}</p>
+        </div>
+      </div>
+  
+      <!-- Catégories -->
+      <div class="stat-card">
+        <div class="stat-icon" style="background-color: #2196F3;">
+          <span class="material-symbols-outlined">category</span>
+        </div>
+        <div class="stat-info">
+          <h3>Catégories</h3>
+          <p class="stat-value">{{ categoriesCount || 0 }}</p>
+        </div>
+      </div>
+  
+      <!-- Maisons -->
+      <div class="stat-card">
+        <div class="stat-icon" style="background-color: #FF9800;">
+          <span class="material-symbols-outlined">home</span>
+        </div>
+        <div class="stat-info">
+          <h3>Maisons</h3>
+          <p class="stat-value">{{ maisonsCount || 0 }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="actions-container">
+      <!-- Bouton Gérer Quartiers -->
+      <button routerLink="/quartier" class="action-button">
+        <span class="material-symbols-outlined">apartment</span>
+        Gérer Quartiers
+      </button>
+  
+      <!-- Bouton Gérer Catégories -->
+      <button routerLink="/categories" class="action-button">
+        <span class="material-symbols-outlined">category</span>
+        Gérer Catégories
+      </button>
+  
+      <!-- Bouton Gérer Maisons -->
+      <button routerLink="/Maison" class="action-button">
+        <span class="material-symbols-outlined">home</span>
+        Gérer Maisons
+      </button>
+    </div>
+  </div>
